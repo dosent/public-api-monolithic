@@ -1,0 +1,33 @@
+entity Category {
+	categoryName String
+}
+
+entity Directory {
+	directoryName String
+    urlAPI String
+    decription String
+    isPublic Public
+}
+
+enum Public {
+    PROD, DEBUG, DELETE
+}
+
+enum Actual {
+    YES, NO, DELETE
+}
+
+// Источник https://data.gov.ru/opendata/7710168515-obscherossiyskiyklassifikatorstranmiraoxm
+entity Country {
+	code Integer // Код никогда не меняется
+	value String // Значение одной строкой
+    nameShort String // Краткое наименование страны
+    nameFull String // Полное официальное наименование страны
+    unrestrictedValue String
+    codeCountry String // Цифровой код страны
+    alfa2Country String // Буквенный код альфа-2
+    alfa3Country String // Буквенный код альфа-3
+    isActual Actual // Актуальность записи    
+}
+
+
