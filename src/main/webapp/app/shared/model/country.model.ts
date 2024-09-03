@@ -5,6 +5,8 @@ export interface ICountry {
   value?: string | null;
   nameShort?: string | null;
   nameFull?: string | null;
+  nameShortEng?: string | null;
+  nameFullEng?: string | null;
   unrestrictedValue?: string | null;
   codeCountry?: string | null;
   alfa2Country?: string | null;
@@ -19,6 +21,8 @@ export class Country implements ICountry {
     public value?: string | null,
     public nameShort?: string | null,
     public nameFull?: string | null,
+    public nameShortEng?: string | null,
+    public nameFullEng?: string | null,
     public unrestrictedValue?: string | null,
     public codeCountry?: string | null,
     public alfa2Country?: string | null,

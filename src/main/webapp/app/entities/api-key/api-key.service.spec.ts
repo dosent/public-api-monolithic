@@ -2,8 +2,8 @@
 import axios from 'axios';
 import sinon from 'sinon';
 
-import DirectoryService from './directory.service';
-import { Directory } from '@/shared/model/directory.model';
+import ApiKeyService from './api-key.service';
+import { ApiKey } from '@/shared/model/api-key.model';
 
 const error = {
   response: {
@@ -23,13 +23,13 @@ const axiosStub = {
 };
 
 describe('Service Tests', () => {
-  describe('Directory Service', () => {
-    let service: DirectoryService;
+  describe('ApiKey Service', () => {
+    let service: ApiKeyService;
     let elemDefault;
 
     beforeEach(() => {
-      service = new DirectoryService();
-      elemDefault = new Directory(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'PROD');
+      service = new ApiKeyService();
+      elemDefault = new ApiKey(123, 'AAAAAAA', 'AAAAAAA', 'YES');
     });
 
     describe('Service methods', () => {
@@ -52,7 +52,7 @@ describe('Service Tests', () => {
           });
       });
 
-      it('should create a Directory', async () => {
+      it('should create a ApiKey', async () => {
         const returnedFromService = { id: 123, ...elemDefault };
         const expected = { ...returnedFromService };
 
@@ -62,7 +62,7 @@ describe('Service Tests', () => {
         });
       });
 
-      it('should not create a Directory', async () => {
+      it('should not create a ApiKey', async () => {
         axiosStub.post.rejects(error);
 
         return service
@@ -73,14 +73,8 @@ describe('Service Tests', () => {
           });
       });
 
-      it('should update a Directory', async () => {
-        const returnedFromService = {
-          directoryName: 'BBBBBB',
-          urlAPI: 'BBBBBB',
-          description: 'BBBBBB',
-          isPublic: 'BBBBBB',
-          ...elemDefault,
-        };
+      it('should update a ApiKey', async () => {
+        const returnedFromService = { keyHash: 'BBBBBB', description: 'BBBBBB', isActual: 'BBBBBB', ...elemDefault };
 
         const expected = { ...returnedFromService };
         axiosStub.put.resolves({ data: returnedFromService });
@@ -90,7 +84,7 @@ describe('Service Tests', () => {
         });
       });
 
-      it('should not update a Directory', async () => {
+      it('should not update a ApiKey', async () => {
         axiosStub.put.rejects(error);
 
         return service
@@ -101,8 +95,8 @@ describe('Service Tests', () => {
           });
       });
 
-      it('should partial update a Directory', async () => {
-        const patchObject = { description: 'BBBBBB', ...new Directory() };
+      it('should partial update a ApiKey', async () => {
+        const patchObject = { description: 'BBBBBB', isActual: 'BBBBBB', ...new ApiKey() };
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = { ...returnedFromService };
@@ -113,7 +107,7 @@ describe('Service Tests', () => {
         });
       });
 
-      it('should not partial update a Directory', async () => {
+      it('should not partial update a ApiKey', async () => {
         axiosStub.patch.rejects(error);
 
         return service
@@ -124,14 +118,8 @@ describe('Service Tests', () => {
           });
       });
 
-      it('should return a list of Directory', async () => {
-        const returnedFromService = {
-          directoryName: 'BBBBBB',
-          urlAPI: 'BBBBBB',
-          description: 'BBBBBB',
-          isPublic: 'BBBBBB',
-          ...elemDefault,
-        };
+      it('should return a list of ApiKey', async () => {
+        const returnedFromService = { keyHash: 'BBBBBB', description: 'BBBBBB', isActual: 'BBBBBB', ...elemDefault };
         const expected = { ...returnedFromService };
         axiosStub.get.resolves([returnedFromService]);
         return service.retrieve().then(res => {
@@ -139,7 +127,7 @@ describe('Service Tests', () => {
         });
       });
 
-      it('should not return a list of Directory', async () => {
+      it('should not return a list of ApiKey', async () => {
         axiosStub.get.rejects(error);
 
         return service
@@ -150,14 +138,14 @@ describe('Service Tests', () => {
           });
       });
 
-      it('should delete a Directory', async () => {
+      it('should delete a ApiKey', async () => {
         axiosStub.delete.resolves({ ok: true });
         return service.delete(123).then(res => {
           expect(res.ok).toBeTruthy();
         });
       });
 
-      it('should not delete a Directory', async () => {
+      it('should not delete a ApiKey', async () => {
         axiosStub.delete.rejects(error);
 
         return service

@@ -26,6 +26,12 @@
             <column name="name_full" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="name_short_eng" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="name_full_eng" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="unrestricted_value" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -66,6 +72,8 @@
             <column name="value" type="string"/>
             <column name="name_short" type="string"/>
             <column name="name_full" type="string"/>
+            <column name="name_short_eng" type="string"/>
+            <column name="name_full_eng" type="string"/>
             <column name="unrestricted_value" type="string"/>
             <column name="code_country" type="string"/>
             <column name="alfa_2_country" type="string"/>

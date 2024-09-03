@@ -23,10 +23,18 @@ entity Country {
 	value String // Значение одной строкой
     nameShort String // Краткое наименование страны
     nameFull String // Полное официальное наименование страны
+    nameShortEng String // Краткое наименование страны на англиском
+    nameFullEng String // Полное официальное наименование страны на англиском
     unrestrictedValue String
     codeCountry String // Цифровой код страны
     alfa2Country String // Буквенный код альфа-2
     alfa3Country String // Буквенный код альфа-3
+    isActual Actual // Актуальность записи
+}
+
+entity ApiKey {
+    keyHash String
+    description String
     isActual Actual // Актуальность записи
 }
 

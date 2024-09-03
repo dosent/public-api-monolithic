@@ -21,6 +21,14 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "nameShortEng",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameFullEng",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "unrestrictedValue",
       "fieldType": "String"
     },

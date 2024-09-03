@@ -15,6 +15,10 @@ const Directory = () => import('@/entities/directory/directory.vue');
 const DirectoryUpdate = () => import('@/entities/directory/directory-update.vue');
 const DirectoryDetails = () => import('@/entities/directory/directory-details.vue');
 
+const ApiKey = () => import('@/entities/api-key/api-key.vue');
+const ApiKeyUpdate = () => import('@/entities/api-key/api-key-update.vue');
+const ApiKeyDetails = () => import('@/entities/api-key/api-key-details.vue');
+
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default {
@@ -91,6 +95,30 @@ export default {
       path: 'directory/:directoryId/view',
       name: 'DirectoryView',
       component: DirectoryDetails,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'api-key',
+      name: 'ApiKey',
+      component: ApiKey,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'api-key/new',
+      name: 'ApiKeyCreate',
+      component: ApiKeyUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'api-key/:apiKeyId/edit',
+      name: 'ApiKeyEdit',
+      component: ApiKeyUpdate,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: 'api-key/:apiKeyId/view',
+      name: 'ApiKeyView',
+      component: ApiKeyDetails,
       meta: { authorities: [Authority.USER] },
     },
     // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -35,6 +35,12 @@ public class Country implements Serializable {
     @Column(name = "name_full")
     private String nameFull;
 
+    @Column(name = "name_short_eng")
+    private String nameShortEng;
+
+    @Column(name = "name_full_eng")
+    private String nameFullEng;
+
     @Column(name = "unrestricted_value")
     private String unrestrictedValue;
 
@@ -116,6 +122,32 @@ public class Country implements Serializable {
 
     public void setNameFull(String nameFull) {
         this.nameFull = nameFull;
+    }
+
+    public String getNameShortEng() {
+        return this.nameShortEng;
+    }
+
+    public Country nameShortEng(String nameShortEng) {
+        this.setNameShortEng(nameShortEng);
+        return this;
+    }
+
+    public void setNameShortEng(String nameShortEng) {
+        this.nameShortEng = nameShortEng;
+    }
+
+    public String getNameFullEng() {
+        return this.nameFullEng;
+    }
+
+    public Country nameFullEng(String nameFullEng) {
+        this.setNameFullEng(nameFullEng);
+        return this;
+    }
+
+    public void setNameFullEng(String nameFullEng) {
+        this.nameFullEng = nameFullEng;
     }
 
     public String getUnrestrictedValue() {
@@ -211,6 +243,8 @@ public class Country implements Serializable {
             ", value='" + getValue() + "'" +
             ", nameShort='" + getNameShort() + "'" +
             ", nameFull='" + getNameFull() + "'" +
+            ", nameShortEng='" + getNameShortEng() + "'" +
+            ", nameFullEng='" + getNameFullEng() + "'" +
             ", unrestrictedValue='" + getUnrestrictedValue() + "'" +
             ", codeCountry='" + getCodeCountry() + "'" +
             ", alfa2Country='" + getAlfa2Country() + "'" +

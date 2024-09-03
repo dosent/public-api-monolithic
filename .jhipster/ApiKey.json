@@ -1,0 +1,24 @@
+{
+  "annotations": {
+    "changelogDate": "20240903085027"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "keyHash",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActual",
+      "fieldType": "Actual",
+      "fieldValues": "YES,NO,DELETE"
+    }
+  ],
+  "name": "ApiKey",
+  "relationships": [],
+  "searchEngine": "no"
+}

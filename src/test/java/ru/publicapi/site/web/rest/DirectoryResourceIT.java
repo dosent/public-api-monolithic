@@ -290,7 +290,7 @@ class DirectoryResourceIT {
         Directory partialUpdatedDirectory = new Directory();
         partialUpdatedDirectory.setId(directory.getId());
 
-        partialUpdatedDirectory.isPublic(UPDATED_IS_PUBLIC);
+        partialUpdatedDirectory.directoryName(UPDATED_DIRECTORY_NAME).description(UPDATED_DESCRIPTION).isPublic(UPDATED_IS_PUBLIC);
 
         restDirectoryMockMvc
             .perform(

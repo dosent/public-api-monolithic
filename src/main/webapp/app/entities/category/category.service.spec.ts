@@ -96,7 +96,7 @@ describe('Service Tests', () => {
       });
 
       it('should partial update a Category', async () => {
-        const patchObject = { categoryName: 'BBBBBB', ...new Category() };
+        const patchObject = { ...new Category() };
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = { ...returnedFromService };

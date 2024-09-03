@@ -131,6 +131,12 @@ public class CountryResource {
                 if (country.getNameFull() != null) {
                     existingCountry.setNameFull(country.getNameFull());
                 }
+                if (country.getNameShortEng() != null) {
+                    existingCountry.setNameShortEng(country.getNameShortEng());
+                }
+                if (country.getNameFullEng() != null) {
+                    existingCountry.setNameFullEng(country.getNameFullEng());
+                }
                 if (country.getUnrestrictedValue() != null) {
                     existingCountry.setUnrestrictedValue(country.getUnrestrictedValue());
                 }

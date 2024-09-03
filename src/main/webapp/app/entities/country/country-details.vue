@@ -29,6 +29,18 @@
             <span>{{ country.nameFull }}</span>
           </dd>
           <dt>
+            <span>Name Short Eng</span>
+          </dt>
+          <dd>
+            <span>{{ country.nameShortEng }}</span>
+          </dd>
+          <dt>
+            <span>Name Full Eng</span>
+          </dt>
+          <dd>
+            <span>{{ country.nameFullEng }}</span>
+          </dd>
+          <dt>
             <span>Unrestricted Value</span>
           </dt>
           <dd>

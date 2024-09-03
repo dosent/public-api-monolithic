@@ -29,7 +29,20 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new CountryService();
-      elemDefault = new Country(123, 0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'YES');
+      elemDefault = new Country(
+        123,
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'YES',
+      );
     });
 
     describe('Service methods', () => {
@@ -79,6 +92,8 @@ describe('Service Tests', () => {
           value: 'BBBBBB',
           nameShort: 'BBBBBB',
           nameFull: 'BBBBBB',
+          nameShortEng: 'BBBBBB',
+          nameFullEng: 'BBBBBB',
           unrestrictedValue: 'BBBBBB',
           codeCountry: 'BBBBBB',
           alfa2Country: 'BBBBBB',
@@ -108,11 +123,11 @@ describe('Service Tests', () => {
 
       it('should partial update a Country', async () => {
         const patchObject = {
-          value: 'BBBBBB',
-          nameFull: 'BBBBBB',
-          codeCountry: 'BBBBBB',
+          code: 1,
+          nameShort: 'BBBBBB',
+          nameShortEng: 'BBBBBB',
+          nameFullEng: 'BBBBBB',
           alfa2Country: 'BBBBBB',
-          isActual: 'BBBBBB',
           ...new Country(),
         };
         const returnedFromService = Object.assign(patchObject, elemDefault);
@@ -142,6 +157,8 @@ describe('Service Tests', () => {
           value: 'BBBBBB',
           nameShort: 'BBBBBB',
           nameFull: 'BBBBBB',
+          nameShortEng: 'BBBBBB',
+          nameFullEng: 'BBBBBB',
           unrestrictedValue: 'BBBBBB',
           codeCountry: 'BBBBBB',
           alfa2Country: 'BBBBBB',

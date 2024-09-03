@@ -46,6 +46,12 @@ class CountryResourceIT {
     private static final String DEFAULT_NAME_FULL = "AAAAAAAAAA";
     private static final String UPDATED_NAME_FULL = "BBBBBBBBBB";
 
+    private static final String DEFAULT_NAME_SHORT_ENG = "AAAAAAAAAA";
+    private static final String UPDATED_NAME_SHORT_ENG = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NAME_FULL_ENG = "AAAAAAAAAA";
+    private static final String UPDATED_NAME_FULL_ENG = "BBBBBBBBBB";
+
     private static final String DEFAULT_UNRESTRICTED_VALUE = "AAAAAAAAAA";
     private static final String UPDATED_UNRESTRICTED_VALUE = "BBBBBBBBBB";
 
@@ -95,6 +101,8 @@ class CountryResourceIT {
             .value(DEFAULT_VALUE)
             .nameShort(DEFAULT_NAME_SHORT)
             .nameFull(DEFAULT_NAME_FULL)
+            .nameShortEng(DEFAULT_NAME_SHORT_ENG)
+            .nameFullEng(DEFAULT_NAME_FULL_ENG)
             .unrestrictedValue(DEFAULT_UNRESTRICTED_VALUE)
             .codeCountry(DEFAULT_CODE_COUNTRY)
             .alfa2Country(DEFAULT_ALFA_2_COUNTRY)
@@ -114,6 +122,8 @@ class CountryResourceIT {
             .value(UPDATED_VALUE)
             .nameShort(UPDATED_NAME_SHORT)
             .nameFull(UPDATED_NAME_FULL)
+            .nameShortEng(UPDATED_NAME_SHORT_ENG)
+            .nameFullEng(UPDATED_NAME_FULL_ENG)
             .unrestrictedValue(UPDATED_UNRESTRICTED_VALUE)
             .codeCountry(UPDATED_CODE_COUNTRY)
             .alfa2Country(UPDATED_ALFA_2_COUNTRY)
@@ -189,6 +199,8 @@ class CountryResourceIT {
             .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE)))
             .andExpect(jsonPath("$.[*].nameShort").value(hasItem(DEFAULT_NAME_SHORT)))
             .andExpect(jsonPath("$.[*].nameFull").value(hasItem(DEFAULT_NAME_FULL)))
+            .andExpect(jsonPath("$.[*].nameShortEng").value(hasItem(DEFAULT_NAME_SHORT_ENG)))
+            .andExpect(jsonPath("$.[*].nameFullEng").value(hasItem(DEFAULT_NAME_FULL_ENG)))
             .andExpect(jsonPath("$.[*].unrestrictedValue").value(hasItem(DEFAULT_UNRESTRICTED_VALUE)))
             .andExpect(jsonPath("$.[*].codeCountry").value(hasItem(DEFAULT_CODE_COUNTRY)))
             .andExpect(jsonPath("$.[*].alfa2Country").value(hasItem(DEFAULT_ALFA_2_COUNTRY)))
@@ -212,6 +224,8 @@ class CountryResourceIT {
             .andExpect(jsonPath("$.value").value(DEFAULT_VALUE))
             .andExpect(jsonPath("$.nameShort").value(DEFAULT_NAME_SHORT))
             .andExpect(jsonPath("$.nameFull").value(DEFAULT_NAME_FULL))
+            .andExpect(jsonPath("$.nameShortEng").value(DEFAULT_NAME_SHORT_ENG))
+            .andExpect(jsonPath("$.nameFullEng").value(DEFAULT_NAME_FULL_ENG))
             .andExpect(jsonPath("$.unrestrictedValue").value(DEFAULT_UNRESTRICTED_VALUE))
             .andExpect(jsonPath("$.codeCountry").value(DEFAULT_CODE_COUNTRY))
             .andExpect(jsonPath("$.alfa2Country").value(DEFAULT_ALFA_2_COUNTRY))
@@ -243,6 +257,8 @@ class CountryResourceIT {
             .value(UPDATED_VALUE)
             .nameShort(UPDATED_NAME_SHORT)
             .nameFull(UPDATED_NAME_FULL)
+            .nameShortEng(UPDATED_NAME_SHORT_ENG)
+            .nameFullEng(UPDATED_NAME_FULL_ENG)
             .unrestrictedValue(UPDATED_UNRESTRICTED_VALUE)
             .codeCountry(UPDATED_CODE_COUNTRY)
             .alfa2Country(UPDATED_ALFA_2_COUNTRY)
@@ -331,10 +347,10 @@ class CountryResourceIT {
         partialUpdatedCountry.setId(country.getId());
 
         partialUpdatedCountry
-            .value(UPDATED_VALUE)
-            .nameFull(UPDATED_NAME_FULL)
-            .codeCountry(UPDATED_CODE_COUNTRY)
-            .alfa2Country(UPDATED_ALFA_2_COUNTRY);
+            .nameFullEng(UPDATED_NAME_FULL_ENG)
+            .unrestrictedValue(UPDATED_UNRESTRICTED_VALUE)
+            .alfa3Country(UPDATED_ALFA_3_COUNTRY)
+            .isActual(UPDATED_IS_ACTUAL);
 
         restCountryMockMvc
             .perform(
@@ -368,6 +384,8 @@ class CountryResourceIT {
             .value(UPDATED_VALUE)
             .nameShort(UPDATED_NAME_SHORT)
             .nameFull(UPDATED_NAME_FULL)
+            .nameShortEng(UPDATED_NAME_SHORT_ENG)
+            .nameFullEng(UPDATED_NAME_FULL_ENG)
             .unrestrictedValue(UPDATED_UNRESTRICTED_VALUE)
             .codeCountry(UPDATED_CODE_COUNTRY)
             .alfa2Country(UPDATED_ALFA_2_COUNTRY)

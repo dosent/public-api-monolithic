@@ -57,6 +57,30 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" for="country-nameShortEng">Name Short Eng</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nameShortEng"
+              id="country-nameShortEng"
+              data-cy="nameShortEng"
+              :class="{ valid: !v$.nameShortEng.$invalid, invalid: v$.nameShortEng.$invalid }"
+              v-model="v$.nameShortEng.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" for="country-nameFullEng">Name Full Eng</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nameFullEng"
+              id="country-nameFullEng"
+              data-cy="nameFullEng"
+              :class="{ valid: !v$.nameFullEng.$invalid, invalid: v$.nameFullEng.$invalid }"
+              v-model="v$.nameFullEng.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" for="country-unrestrictedValue">Unrestricted Value</label>
             <input
               type="text"

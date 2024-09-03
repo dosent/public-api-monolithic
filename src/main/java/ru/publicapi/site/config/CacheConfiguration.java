@@ -55,6 +55,7 @@ public class CacheConfiguration {
             createCache(cm, ru.publicapi.site.domain.Category.class.getName());
             createCache(cm, ru.publicapi.site.domain.Country.class.getName());
             createCache(cm, ru.publicapi.site.domain.Directory.class.getName());
+            createCache(cm, ru.publicapi.site.domain.ApiKey.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
