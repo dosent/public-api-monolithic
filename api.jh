@@ -5,11 +5,11 @@ entity Category {
 entity Directory {
 	directoryName String
     urlAPI String
-    decription String
-    isPublic Public
+    description String
+    isPublic Publication
 }
 
-enum Public {
+enum Publication {
     PROD, DEBUG, DELETE
 }
 
@@ -27,7 +27,7 @@ entity Country {
     codeCountry String // Цифровой код страны
     alfa2Country String // Буквенный код альфа-2
     alfa3Country String // Буквенный код альфа-3
-    isActual Actual // Актуальность записи    
+    isActual Actual // Актуальность записи
 }
 
 

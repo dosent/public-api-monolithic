@@ -68,7 +68,7 @@
     "webapp:test": "npm run test --"
   },
   "config": {
-    "backend_port": 85871,
+    "backend_port": 8587,
     "default_environment": "prod",
     "packaging": "jar"
   },
@@ -127,7 +127,7 @@
     "swagger-ui-dist": "5.17.14",
     "typescript": "5.5.4",
     "typescript-eslint": "8.2.0",
-    "vite": "5.4.2",
+    "vite": "^5.4.2",
     "vite-plugin-static-copy": "1.0.6",
     "vitest": "2.0.5",
     "vitest-sonar-reporter": "2.0.0",

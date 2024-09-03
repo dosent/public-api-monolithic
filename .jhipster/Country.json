@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20240903054124"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameShort",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameFull",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unrestrictedValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeCountry",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alfa2Country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alfa3Country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActual",
+      "fieldType": "Actual",
+      "fieldValues": "YES,NO,DELETE"
+    }
+  ],
+  "name": "Country",
+  "relationships": [],
+  "searchEngine": "no"
+}

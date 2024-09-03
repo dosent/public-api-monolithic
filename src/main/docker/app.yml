@@ -10,13 +10,13 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/apiApplication
       - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgresql:5432/apiApplication
     ports:
-      - 127.0.0.1:85871:85871
+      - 127.0.0.1:8587:8587
     healthcheck:
       test:
         - CMD
         - curl
         - -f
-        - http://localhost:85871/management/health
+        - http://localhost:8587/management/health
       interval: 5s
       timeout: 5s
       retries: 40

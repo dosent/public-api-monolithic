@@ -52,6 +52,9 @@ public class CacheConfiguration {
             createCache(cm, ru.publicapi.site.domain.User.class.getName() + ".authorities");
             createCache(cm, ru.publicapi.site.domain.PersistentToken.class.getName());
             createCache(cm, ru.publicapi.site.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, ru.publicapi.site.domain.Category.class.getName());
+            createCache(cm, ru.publicapi.site.domain.Country.class.getName());
+            createCache(cm, ru.publicapi.site.domain.Directory.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

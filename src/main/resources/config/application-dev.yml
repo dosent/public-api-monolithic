@@ -52,7 +52,7 @@ spring:
     cache: false
 
 server:
-  port: 85871
+  port: 8587
   # make sure requests the proxy uri instead of the server one
   forward-headers-strategy: native
 
@@ -83,7 +83,7 @@ jhipster:
       # security key (this key should be unique for your application, and kept secret)
       key: 0075d555ac2c92d3687a74f2b75efe077f2331d9fc539e1c26f1fbd5a40a80bcf3cc6bf479abd727187b8913d393c7f15412
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:85871
+    base-url: http://127.0.0.1:8587
   logging:
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration

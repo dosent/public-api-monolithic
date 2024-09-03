@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20240903054125"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "directoryName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "urlAPI",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isPublic",
+      "fieldType": "Publication",
+      "fieldValues": "PROD,DEBUG,DELETE"
+    }
+  ],
+  "name": "Directory",
+  "relationships": [],
+  "searchEngine": "no"
+}
