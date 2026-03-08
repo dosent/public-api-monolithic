@@ -1,153 +1,61 @@
-######################
-# Node
-######################
-/node/
-node_tmp/
+```
+# Environment variables
+.env
+.env.local
+.env.*
+
+# Dependencies
 node_modules/
-npm-debug.log.*
-/.awcache/*
-/.cache-loader/*
-
-######################
-# SASS
-######################
-.sass-cache/
-
-######################
-# Eclipse
-######################
-*.pydevproject
-.project
-.metadata
-tmp/
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-.factorypath
-
-# External tool builders
-.externalToolBuilders/**
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
-
-# STS-specific
-/.sts4-cache/*
-
-######################
-# IntelliJ
-######################
-.idea/
-*.iml
-*.iws
-*.ipr
-*.ids
-*.orig
-classes/
-out/
-
-######################
-# Visual Studio Code
-######################
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-######################
-# Maven
-######################
-/log/
-/target/
-
-######################
-# Gradle
-######################
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+dist/
+build/
+target/
 .gradle/
-/build/
-/buildSrc/.gradle/
-/buildSrc/build/
 
-######################
-# Package Files
-######################
-*.jar
-*.war
-*.ear
-*.db
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.swo
 
-######################
-# Windows
-######################
-# Windows image file caches
+# OS generated files
+.DS_Store
 Thumbs.db
 
-# Folder config file
-Desktop.ini
+# Editors
+.vscode/
+.idea/
 
-######################
-# Mac OSX
-######################
-.DS_Store
-.svn
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
 
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-######################
-# Directories
-######################
-/bin/
-/deploy/
-
-######################
-# Logs
-######################
-*.log*
-
-######################
-# Others
-######################
-*.class
-*.*~
-*~
-.merge_file*
-
-######################
-# Gradle Wrapper
-######################
-!gradle/wrapper/gradle-wrapper.jar
-
-######################
-# Maven Wrapper
-######################
-!.mvn/wrapper/maven-wrapper.jar
-
-######################
-# ESLint
-######################
-.eslintcache
-
-######################
-# Code coverage
-######################
-/coverage/
-/.nyc_output/
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+```
