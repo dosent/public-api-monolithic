@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: registry.cloud.ru/api-application:latest
+    container_name: api-application
+    restart: always
+    ports:
+      - "8587:8587"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://${DB_HOST:-localhost}:5432/${DB_NAME:-apiApplication}
+      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME:-apiApplication}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD:-}
+      - JHIPTER_SECURITY_REMEMBER_ME_KEY=${JHIPSTER_SECURITY_KEY:-0075d555ac2c92d3687a74f2b75efe077f2331d9fc539e1c26f1fbd5a40a80bcf3cc6bf479abd727187b8913d393c7f15412}
+      - JAVA_OPTS=-Xmx512m -Xms256m
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    networks:
+      - api-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8587/management/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  postgresql:
+    image: postgres:15-alpine
+    container_name: api-application-db
+    restart: always
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${DB_USERNAME:-apiApplication}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-}
+      - POSTGRES_DB=${DB_NAME:-apiApplication}
+    networks:
+      - api-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-apiApplication} -d ${DB_NAME:-apiApplication}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  postgresql_data:
+
+networks:
+  api-network:
+    driver: bridge
